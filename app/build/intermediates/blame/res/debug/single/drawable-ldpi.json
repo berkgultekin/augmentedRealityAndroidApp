@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\right_arrow.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\src\\main\\res\\drawable-ldpi\\right_arrow.png"
+    },
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\left_arrow.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\src\\main\\res\\drawable-ldpi\\left_arrow.png"
+    },
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_android_icon.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\src\\main\\res\\drawable-ldpi\\ic_android_icon.png"
+    },
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_left_arrow_2.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\src\\main\\res\\drawable-ldpi\\ic_left_arrow_2.png"
+    },
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_launcher.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\ic_right_arrow_2.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\src\\main\\res\\drawable-ldpi\\ic_right_arrow_2.png"
+    }
+]

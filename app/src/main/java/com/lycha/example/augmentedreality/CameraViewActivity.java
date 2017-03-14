@@ -27,15 +27,19 @@ public class CameraViewActivity extends Activity implements
 
 	private double mAzimuthReal = 0;
 	private double mAzimuthTeoretical = 0;
-	private static double AZIMUTH_ACCURACY = 5;
+	private static double AZIMUTH_ACCURACY = 15;
 	private double mMyLatitude = 0;
 	private double mMyLongitude = 0;
+    private double mMyDistance = 0;
 
 	private MyCurrentAzimuth myCurrentAzimuth;
 	private MyCurrentLocation myCurrentLocation;
 
 	TextView descriptionTextView;
+    TextView teamMemberInfo;
 	ImageView pointerIcon;
+	ImageView leftArrow;
+	ImageView rightArrow;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -52,8 +56,7 @@ public class CameraViewActivity extends Activity implements
 		mPoi = new AugmentedPOI(
 				"Ankara",
 				"Ankara Gölbaşı",
-				39.798994,
-				32.819514
+				39.893953, 32.785954
 		);
 	}
 
@@ -69,7 +72,7 @@ public class CameraViewActivity extends Activity implements
 		phiAngle = Math.atan(tanPhi);
 		phiAngle = Math.toDegrees(phiAngle);
 
-		if (dX > 0 && dY > 0) { // I
+		if (dX > 0 && dY > 0) { // I quater
 			return azimuth = phiAngle;
 		} else if (dX < 0 && dY > 0) { // II
 			return azimuth = 180 - phiAngle;
@@ -112,9 +115,9 @@ public class CameraViewActivity extends Activity implements
 	}
 
 	private void updateDescription() {
-		descriptionTextView.setText(mPoi.getPoiName() + " azimuthTeoretical "
-				+ mAzimuthTeoretical + " azimuthReal " + mAzimuthReal + " latitude "
-				+ mMyLatitude + " longitude " + mMyLongitude);
+		descriptionTextView.setText(" AzimuthTeoretical: " + mAzimuthTeoretical +
+                "\n AzimuthReal: " + mAzimuthReal +
+                "\n Latitude: " + mMyLatitude + "  Longitude: " + mMyLongitude );
 	}
 
 	@Override
@@ -122,28 +125,116 @@ public class CameraViewActivity extends Activity implements
 		mMyLatitude = location.getLatitude();
 		mMyLongitude = location.getLongitude();
 		mAzimuthTeoretical = calculateTeoreticalAzimuth();
-		Toast.makeText(this,"latitude: "+location.getLatitude()+" longitude: "+location.getLongitude(), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this,"latitude: " + location.getLatitude()
+                            +" longitude: " +location.getLongitude(), Toast.LENGTH_SHORT).show();
 		updateDescription();
 	}
 
 	@Override
 	public void onAzimuthChanged(float azimuthChangedFrom, float azimuthChangedTo) {
-		mAzimuthReal = azimuthChangedTo;
+
+        double filteredValue = azimuthChangedFrom + ((azimuthChangedTo - azimuthChangedFrom) / (8 / 1));
+        //filteredValue = oldValue + (newValue - oldValue) / (smoothing / timeSinceLastUpdate)
+
+		mAzimuthReal = filteredValue;
 		mAzimuthTeoretical = calculateTeoreticalAzimuth();
 
 		pointerIcon = (ImageView) findViewById(R.id.icon);
+		leftArrow = (ImageView) findViewById(R.id.left_arrow);
+		rightArrow = (ImageView) findViewById(R.id.right_arrow);
+        teamMemberInfo = (TextView) findViewById(R.id.teamMemberInfo);
 
 		double minAngle = calculateAzimuthAccuracy(mAzimuthTeoretical).get(0);
 		double maxAngle = calculateAzimuthAccuracy(mAzimuthTeoretical).get(1);
 
 		if (isBetween(minAngle, maxAngle, mAzimuthReal)) {
 			pointerIcon.setVisibility(View.VISIBLE);
+			leftArrow.setVisibility(View.INVISIBLE);
+			rightArrow.setVisibility(View.INVISIBLE);
 		} else {
-			pointerIcon.setVisibility(View.INVISIBLE);
+			double min = minAngle - 175;
+			double max = maxAngle + 175;
+            teamMemberInfo.setVisibility(View.INVISIBLE);
+			if(min < 0) {
+				double min1 = min + 360;
+
+                if ((min1 < mAzimuthReal && 360 > mAzimuthReal) ||
+                    (minAngle < mAzimuthReal && 0 < mAzimuthReal)) {
+					pointerIcon.setVisibility(View.INVISIBLE);
+					leftArrow.setVisibility(View.INVISIBLE);
+					rightArrow.setVisibility(View.VISIBLE);
+				}
+                else{
+                    pointerIcon.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.VISIBLE);
+                    rightArrow.setVisibility(View.INVISIBLE);
+                }
+			}
+            else if (min >= 0){
+                if (mAzimuthReal < minAngle && mAzimuthReal > min) {
+                    pointerIcon.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.INVISIBLE);
+                    rightArrow.setVisibility(View.VISIBLE);
+                }
+                else{
+                    pointerIcon.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.VISIBLE);
+                    rightArrow.setVisibility(View.INVISIBLE);
+                }
+            }
+
+			if(max > 360) {
+                double max1 = max - 360;
+				if ((max1 > mAzimuthReal && 0 < mAzimuthReal) ||
+                    (maxAngle < mAzimuthReal && 360 > mAzimuthReal)) {
+					pointerIcon.setVisibility(View.INVISIBLE);
+					leftArrow.setVisibility(View.VISIBLE);
+					rightArrow.setVisibility(View.INVISIBLE);
+				}
+                else{
+                    pointerIcon.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.INVISIBLE);
+                    rightArrow.setVisibility(View.VISIBLE);
+                }
+			}
+            else if (max <= 360){
+                if ( mAzimuthReal > maxAngle && mAzimuthReal < max) {
+                    pointerIcon.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.VISIBLE);
+                    rightArrow.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    pointerIcon.setVisibility(View.INVISIBLE);
+                    leftArrow.setVisibility(View.INVISIBLE);
+                    rightArrow.setVisibility(View.VISIBLE);
+                }
+            }
+
 		}
 
 		updateDescription();
 	}
+
+    private double distance(double lat1, double lon1, double lat2, double lon2) {
+        double theta = lon1 - lon2;
+        double dist = Math.sin(deg2rad(lat1))
+                * Math.sin(deg2rad(lat2))
+                + Math.cos(deg2rad(lat1))
+                * Math.cos(deg2rad(lat2))
+                * Math.cos(deg2rad(theta));
+        dist = Math.acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515 * 1.609344;
+        return (dist);
+    }
+
+    private double deg2rad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    private double rad2deg(double rad) {
+        return (rad * 180.0 / Math.PI);
+    }
 
 	@Override
 	protected void onStop() {
@@ -210,4 +301,11 @@ public class CameraViewActivity extends Activity implements
 		mCamera = null;
 		isCameraviewOn = false;
 	}
+
+    public void onClick(View v) {
+        mMyDistance = distance(mMyLatitude, mMyLongitude, 39.893953, 32.785954);
+        teamMemberInfo.setText("NAME: BERK GÜLTEKİN\n" +
+                                "CALCULATED DISTANCE: " + mMyDistance);
+        teamMemberInfo.setVisibility(View.VISIBLE);
+    }
 }

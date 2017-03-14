@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-8.1.0_7b64c339a813372751080ab02b2a6985201a52c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-8.1.0_bfc9b831300ac33e0858a756b25a1f50b6bd6390\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-22.2.0_da6196531e55d3c61bd033854e2cfa354ed53707\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.2.0_45ec1c0c722d8e802a3b32c9663ad4333b348692\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="482de223655d06253cc6a4955d653f8994169500">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-measurement-8.1.0_b54c7110a1910f0f5f6dba5dff9aa14c4143754e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-8.1.0_057de884d7f014d70e0dd0808512e263b5752d02\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-8.1.0_bdbdc74e713f6e8084240c7b279e0a7816e9c7b1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.1.0_a3c7f1a342030b268d4a6c145890f77333e75935\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3178362320bcf51228835b60ff978efadfd1f783">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-8.1.0_3b1ca720c192d4c80818e66ba696a190c3a30f8a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.1.0_b89bda2f030000988a5f73d323e69cabdad74588\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="997773777cf3904c11d6764fe3b7668538220e49">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-8.1.0_f3ad0f81f5c80099b0ae8ed45cb26ace5226e9a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="39efb16bf6f9365a34ccb1cc40215fdf5c3899c6">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c0a4fbf7e1d2c3e499a8271dd50da5c6c20d8a92\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-8.1.0_7a86569090345de680f3f9bd2ce6fcc86e24b6c5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-8.1.0_e8a4dfaf9abc2ce33dd741b95ed33815f0bf747a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.1.0_8739aee1256138351ba320167be2bb2e1dcec73d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-8.1.0_197c25aec0f166f708e095dda1b1f5b9033dcd54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-8.1.0_6c70e77233e15131d9304d92a9f1177160b25233\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-8.1.0_025553ff6b705e6efe41c13ff7886c1f1f3ff481\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\user\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.2.0_718687d023ab9571473b1b3942d832fd42bb1c54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-8.1.0_09c88ecdf6b77a628327d284b76229e34eb28269\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_37e12a09b7c1177188641ca99cb3469569b5dd3d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="809c7564d9d1a1fbb3da911208cc12a838aab509">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_746b75e3eba8613f516ed821020a144d284878ab\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_775bd4082f0b9d5017ea9b5a455c77276aa160fb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="17449c47df35c754b257532052f1270c444f7993">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-8.1.0_843d9d462491a94910507662dee05762f59c48bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.0_958260c062835ed09c996513386aba39ccaed72b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-8.1.0_d7176b7d2a3cf123e55f4864f628732da9409f58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-8.1.0_a3613f3d93e951d0e9eede40acd1b9c4f6f6218e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="95758a2905669affbffc5ddd262921d375674fad">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-8.1.0_ec81cee38c0b14c847c5653a259dd1a57ead76e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-8.1.0_c821ba4eb67902b57484a020c328f8dcabea3c23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
+        <dex dex="D:\SearchAndRescue\augmented-reality-example\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-8.1.0_f87ff53552e0f621cae5b8192b41f514f0cc9846\classes.dex" />
+    </item>
+
+</items>
