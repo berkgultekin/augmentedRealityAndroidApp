@@ -56,7 +56,7 @@ public class CameraViewActivity extends Activity implements
 		mPoi = new AugmentedPOI(
 				"Ankara",
 				"Ankara Gölbaşı",
-				39.893953, 32.785954
+				39.798328, 32.810945
 		);
 	}
 
@@ -303,7 +303,7 @@ public class CameraViewActivity extends Activity implements
 	}
 
     public void onClick(View v) {
-        mMyDistance = distance(mMyLatitude, mMyLongitude, 39.893953, 32.785954);
+        mMyDistance = distance(mMyLatitude, mMyLongitude, 39.798328, 32.810945);
         teamMemberInfo.setText("NAME: BERK GÜLTEKİN\n" +
                                 "CALCULATED DISTANCE: " + mMyDistance);
         teamMemberInfo.setVisibility(View.VISIBLE);

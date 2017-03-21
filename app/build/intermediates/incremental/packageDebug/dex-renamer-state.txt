@@ -1,7 +1,4 @@
-#Tue Mar 14 21:10:22 AST 2017
-base.0=D\:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_746b75e3eba8613f516ed821020a144d284878ab
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_c0a4fbf7e1d2c3e499a8271dd50da5c6c20d8a92\\classes.dex
-base.1=D\:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_c0a4fbf7e1d2c3e499a8271dd50da5c6c20d8a92
-file.0=D\:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_746b75e3eba8613f516ed821020a144d284878ab\\classes.dex
+#Tue Mar 21 23:14:51 AST 2017
+base.0=D\:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

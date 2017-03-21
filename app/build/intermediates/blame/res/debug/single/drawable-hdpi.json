@@ -44,12 +44,12 @@
         "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_signin_btn_text_focus_light.9.png",
-        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable-hdpi\\common_signin_btn_text_focus_light.9.png"
-    },
-    {
         "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_list_focused_holo.9.png",
         "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable-hdpi\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\common_signin_btn_text_focus_light.9.png",
+        "source": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable-hdpi\\common_signin_btn_text_focus_light.9.png"
     },
     {
         "merged": "D:\\SearchAndRescue\\augmented-reality-example\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_plusone_tall_off_client.png",
