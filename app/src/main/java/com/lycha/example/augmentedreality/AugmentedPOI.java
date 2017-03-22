@@ -3,14 +3,12 @@ package com.lycha.example.augmentedreality;
 public class AugmentedPOI {
 	private int mId;
 	private String mName;
-	private String mDescription;
 	private double mLatitude;
 	private double mLongitude;
 	
-	public AugmentedPOI(String newName, String newDescription,
+	public AugmentedPOI(String newName,
 						double newLatitude, double newLongitude) {
 		this.mName = newName;
-        this.mDescription = newDescription;
         this.mLatitude = newLatitude;
         this.mLongitude = newLongitude;
 	}
@@ -26,12 +24,6 @@ public class AugmentedPOI {
 	}
 	public void setPoiName(String poiName) {
 		this.mName = poiName;
-	}
-	public String getPoiDescription() {
-		return mDescription;
-	}
-	public void setPoiDescription(String poiDescription) {
-		this.mDescription = poiDescription;
 	}
 	public double getPoiLatitude() {
 		return mLatitude;

@@ -24,22 +24,32 @@ public class CameraViewActivity extends Activity implements
 	private SurfaceHolder mSurfaceHolder;
 	private boolean isCameraviewOn = false;
 	private AugmentedPOI mPoi;
+	private AugmentedPOI mPoi2;
 
 	private double mAzimuthReal = 0;
 	private double mAzimuthTeoretical = 0;
+    private double mAzimuthTeoretical2 = 0;
 	private static double AZIMUTH_ACCURACY = 15;
 	private double mMyLatitude = 0;
 	private double mMyLongitude = 0;
     private double mMyDistance = 0;
+    private int myFlag = 0;
 
 	private MyCurrentAzimuth myCurrentAzimuth;
 	private MyCurrentLocation myCurrentLocation;
 
 	TextView descriptionTextView;
     TextView teamMemberInfo;
+	TextView leftArrowText;
+    TextView leftArrowText2;
+	TextView rightArrowText;
+    TextView rightArrowText2;
+
 	ImageView pointerIcon;
 	ImageView leftArrow;
+    ImageView leftArrow2;
 	ImageView rightArrow;
+    ImageView rightArrow2;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,15 +64,29 @@ public class CameraViewActivity extends Activity implements
 
 	private void setAugmentedRealityPoint() {
 		mPoi = new AugmentedPOI(
-				"Ankara",
-				"Ankara Gölbaşı",
-				39.798328, 32.810945
+				"Berk",
+				39.797600, 32.810727
 		);
+
+		mPoi2 = new AugmentedPOI(
+				"Ali",
+				39.799435, 32.824124
+		);
+
+		/*mPoi3 = new AugmentedPOI(
+				"Veli",
+				39.797600, 32.810727
+		);
+
+		mPoi4 = new AugmentedPOI(
+				"Ayse",
+				39.797600, 32.810727
+		);*/
 	}
 
-	public double calculateTeoreticalAzimuth() {
-		double dX = mPoi.getPoiLatitude() - mMyLatitude;
-		double dY = mPoi.getPoiLongitude() - mMyLongitude;
+	public double calculateTeoreticalAzimuth(AugmentedPOI thePoi) {
+		double dX = thePoi.getPoiLatitude() - mMyLatitude;
+		double dY = thePoi.getPoiLongitude() - mMyLongitude;
 
 		double phiAngle;
 		double tanPhi;
@@ -124,7 +148,8 @@ public class CameraViewActivity extends Activity implements
 	public void onLocationChanged(Location location) {
 		mMyLatitude = location.getLatitude();
 		mMyLongitude = location.getLongitude();
-		mAzimuthTeoretical = calculateTeoreticalAzimuth();
+		mAzimuthTeoretical = calculateTeoreticalAzimuth(mPoi);
+        mAzimuthTeoretical2 = calculateTeoreticalAzimuth(mPoi2);
 		Toast.makeText(this,"latitude: " + location.getLatitude()
                             +" longitude: " +location.getLongitude(), Toast.LENGTH_SHORT).show();
 		updateDescription();
@@ -133,87 +158,191 @@ public class CameraViewActivity extends Activity implements
 	@Override
 	public void onAzimuthChanged(float azimuthChangedFrom, float azimuthChangedTo) {
 
-        double filteredValue = azimuthChangedFrom + ((azimuthChangedTo - azimuthChangedFrom) / (8 / 1));
-        //filteredValue = oldValue + (newValue - oldValue) / (smoothing / timeSinceLastUpdate)
+        //double filteredValue = azimuthChangedFrom + ((azimuthChangedTo - azimuthChangedFrom) / (8 / 1));
 
-		mAzimuthReal = filteredValue;
-		mAzimuthTeoretical = calculateTeoreticalAzimuth();
+		mAzimuthReal = azimuthChangedTo;
+		mAzimuthTeoretical = calculateTeoreticalAzimuth(mPoi);
+        mAzimuthTeoretical2 = calculateTeoreticalAzimuth(mPoi2);
 
 		pointerIcon = (ImageView) findViewById(R.id.icon);
+
 		leftArrow = (ImageView) findViewById(R.id.left_arrow);
+        leftArrow2 = (ImageView) findViewById(R.id.left_arrow2);
 		rightArrow = (ImageView) findViewById(R.id.right_arrow);
+        rightArrow2 = (ImageView) findViewById(R.id.right_arrow2);
+
         teamMemberInfo = (TextView) findViewById(R.id.teamMemberInfo);
+
+		leftArrowText = (TextView) findViewById(R.id.left_arrow_text);
+        leftArrowText2 = (TextView) findViewById(R.id.left_arrow_text2);
+		rightArrowText = (TextView) findViewById(R.id.right_arrow_text);
+        rightArrowText2 = (TextView) findViewById(R.id.right_arrow_text2);
 
 		double minAngle = calculateAzimuthAccuracy(mAzimuthTeoretical).get(0);
 		double maxAngle = calculateAzimuthAccuracy(mAzimuthTeoretical).get(1);
 
-		if (isBetween(minAngle, maxAngle, mAzimuthReal)) {
-			pointerIcon.setVisibility(View.VISIBLE);
-			leftArrow.setVisibility(View.INVISIBLE);
-			rightArrow.setVisibility(View.INVISIBLE);
-		} else {
-			double min = minAngle - 175;
-			double max = maxAngle + 175;
-            teamMemberInfo.setVisibility(View.INVISIBLE);
-			if(min < 0) {
-				double min1 = min + 360;
+        double minAngle2 = calculateAzimuthAccuracy(mAzimuthTeoretical2).get(0);
+        double maxAngle2 = calculateAzimuthAccuracy(mAzimuthTeoretical2).get(1);
 
-                if ((min1 < mAzimuthReal && 360 > mAzimuthReal) ||
-                    (minAngle < mAzimuthReal && 0 < mAzimuthReal)) {
-					pointerIcon.setVisibility(View.INVISIBLE);
-					leftArrow.setVisibility(View.INVISIBLE);
-					rightArrow.setVisibility(View.VISIBLE);
-				}
-                else{
-                    pointerIcon.setVisibility(View.INVISIBLE);
-                    leftArrow.setVisibility(View.VISIBLE);
-                    rightArrow.setVisibility(View.INVISIBLE);
-                }
-			}
-            else if (min >= 0){
-                if (mAzimuthReal < minAngle && mAzimuthReal > min) {
-                    pointerIcon.setVisibility(View.INVISIBLE);
-                    leftArrow.setVisibility(View.INVISIBLE);
-                    rightArrow.setVisibility(View.VISIBLE);
-                }
-                else{
-                    pointerIcon.setVisibility(View.INVISIBLE);
-                    leftArrow.setVisibility(View.VISIBLE);
-                    rightArrow.setVisibility(View.INVISIBLE);
-                }
-            }
-
-			if(max > 360) {
-                double max1 = max - 360;
-				if ((max1 > mAzimuthReal && 0 < mAzimuthReal) ||
-                    (maxAngle < mAzimuthReal && 360 > mAzimuthReal)) {
-					pointerIcon.setVisibility(View.INVISIBLE);
-					leftArrow.setVisibility(View.VISIBLE);
-					rightArrow.setVisibility(View.INVISIBLE);
-				}
-                else{
-                    pointerIcon.setVisibility(View.INVISIBLE);
-                    leftArrow.setVisibility(View.INVISIBLE);
-                    rightArrow.setVisibility(View.VISIBLE);
-                }
-			}
-            else if (max <= 360){
-                if ( mAzimuthReal > maxAngle && mAzimuthReal < max) {
-                    pointerIcon.setVisibility(View.INVISIBLE);
-                    leftArrow.setVisibility(View.VISIBLE);
-                    rightArrow.setVisibility(View.INVISIBLE);
-                }
-                else{
-                    pointerIcon.setVisibility(View.INVISIBLE);
-                    leftArrow.setVisibility(View.INVISIBLE);
-                    rightArrow.setVisibility(View.VISIBLE);
-                }
-            }
-
-		}
+        findIt(minAngle, maxAngle, mAzimuthReal);
+        if(myFlag == 1 || myFlag == 2)
+            findIt2(minAngle2, maxAngle2, mAzimuthReal);
+        else
+            findIt(minAngle2, maxAngle2, mAzimuthReal);
 
 		updateDescription();
 	}
+
+	private void findIt(double minAngle, double maxAngle, double mAzimuthReal){
+        if (isBetween(minAngle, maxAngle, mAzimuthReal)) {
+            visibilitySetter(pointerIcon);
+        } else {
+            double min = minAngle - 175;
+            double max = maxAngle + 175;
+            teamMemberInfo.setVisibility(View.INVISIBLE);
+            if(min < 0) {
+                double min1 = min + 360;
+
+                if ((min1 < mAzimuthReal && 360 > mAzimuthReal) ||
+                        (minAngle < mAzimuthReal && 0 < mAzimuthReal)) {
+                    visibilitySetter(rightArrow);
+                }
+                else{
+                    visibilitySetter(leftArrow);
+                }
+            }
+            else if (min >= 0){
+                if (mAzimuthReal < minAngle && mAzimuthReal > min) {
+                    visibilitySetter(rightArrow);
+                }
+                else{
+                    visibilitySetter(leftArrow);
+                }
+            }
+
+            if(max > 360) {
+                double max1 = max - 360;
+                if ((max1 > mAzimuthReal && 0 < mAzimuthReal) ||
+                        (maxAngle < mAzimuthReal && 360 > mAzimuthReal)) {
+                    visibilitySetter(leftArrow);
+                }
+                else{
+                    visibilitySetter(rightArrow);
+                }
+            }
+            else if (max <= 360){
+                if ( mAzimuthReal > maxAngle && mAzimuthReal < max) {
+                    visibilitySetter(leftArrow);
+                }
+                else{
+                    visibilitySetter(rightArrow);
+                }
+            }
+        }
+    }
+
+    private void findIt2(double minAngle, double maxAngle, double mAzimuthReal){
+        if (isBetween(minAngle, maxAngle, mAzimuthReal)) {
+            visibilitySetter2(pointerIcon);
+        } else {
+            double min = minAngle - 175;
+            double max = maxAngle + 175;
+            teamMemberInfo.setVisibility(View.INVISIBLE);
+            if(min < 0) {
+                double min1 = min + 360;
+
+                if ((min1 < mAzimuthReal && 360 > mAzimuthReal) ||
+                        (minAngle < mAzimuthReal && 0 < mAzimuthReal)) {
+                    visibilitySetter2(rightArrow);
+                }
+                else{
+                    visibilitySetter2(leftArrow);
+                }
+            }
+            else if (min >= 0){
+                if (mAzimuthReal < minAngle && mAzimuthReal > min) {
+                    visibilitySetter2(rightArrow);
+                }
+                else{
+                    visibilitySetter2(leftArrow);
+                }
+            }
+
+            if(max > 360) {
+                double max1 = max - 360;
+                if ((max1 > mAzimuthReal && 0 < mAzimuthReal) ||
+                        (maxAngle < mAzimuthReal && 360 > mAzimuthReal)) {
+                    visibilitySetter2(leftArrow);
+                }
+                else{
+                    visibilitySetter2(rightArrow);
+                }
+            }
+            else if (max <= 360){
+                if ( mAzimuthReal > maxAngle && mAzimuthReal < max) {
+                    visibilitySetter2(leftArrow);
+                }
+                else{
+                    visibilitySetter2(rightArrow);
+                }
+            }
+        }
+    }
+
+	private void visibilitySetter(ImageView visibleView){
+		if(visibleView == pointerIcon){
+			pointerIcon.setVisibility(View.VISIBLE);
+			leftArrow.setVisibility(View.INVISIBLE);
+			leftArrowText.setVisibility(View.INVISIBLE);
+			rightArrow.setVisibility(View.INVISIBLE);
+			rightArrowText.setVisibility(View.INVISIBLE);
+            myFlag = 1;
+		}
+		else if(visibleView == leftArrow){
+			pointerIcon.setVisibility(View.INVISIBLE);
+			leftArrow.setVisibility(View.VISIBLE);
+			leftArrowText.setVisibility(View.VISIBLE);
+			rightArrow.setVisibility(View.INVISIBLE);
+			rightArrowText.setVisibility(View.INVISIBLE);
+            myFlag = 2;
+		}
+		else if(visibleView == rightArrow){
+			pointerIcon.setVisibility(View.INVISIBLE);
+			leftArrow.setVisibility(View.INVISIBLE);
+			leftArrowText.setVisibility(View.INVISIBLE);
+			rightArrow.setVisibility(View.VISIBLE);
+			rightArrowText.setVisibility(View.VISIBLE);
+            myFlag = 3;
+		}
+	}
+
+    private void visibilitySetter2(ImageView visibleView){
+        if(visibleView == pointerIcon){
+            pointerIcon.setVisibility(View.VISIBLE);
+            leftArrow2.setVisibility(View.INVISIBLE);
+            leftArrowText2.setVisibility(View.INVISIBLE);
+            rightArrow2.setVisibility(View.INVISIBLE);
+            rightArrowText2.setVisibility(View.INVISIBLE);
+            myFlag = 1;
+        }
+        else if(visibleView == leftArrow){
+            pointerIcon.setVisibility(View.INVISIBLE);
+            leftArrow2.setVisibility(View.VISIBLE);
+            leftArrowText2.setVisibility(View.VISIBLE);
+            rightArrow2.setVisibility(View.INVISIBLE);
+            rightArrowText2.setVisibility(View.INVISIBLE);
+            myFlag = 2;
+        }
+        else if(visibleView == rightArrow){
+            pointerIcon.setVisibility(View.INVISIBLE);
+            leftArrow2.setVisibility(View.INVISIBLE);
+            leftArrowText2.setVisibility(View.INVISIBLE);
+            rightArrow2.setVisibility(View.VISIBLE);
+            rightArrowText2.setVisibility(View.VISIBLE);
+            myFlag = 3;
+        }
+    }
+
 
     private double distance(double lat1, double lon1, double lat2, double lon2) {
         double theta = lon1 - lon2;
@@ -303,7 +432,7 @@ public class CameraViewActivity extends Activity implements
 	}
 
     public void onClick(View v) {
-        mMyDistance = distance(mMyLatitude, mMyLongitude, 39.798328, 32.810945);
+        mMyDistance = distance(mMyLatitude, mMyLongitude, 39.797600, 32.810727);
         teamMemberInfo.setText("NAME: BERK GÜLTEKİN\n" +
                                 "CALCULATED DISTANCE: " + mMyDistance);
         teamMemberInfo.setVisibility(View.VISIBLE);
